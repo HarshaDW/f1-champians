@@ -25,11 +25,11 @@
       "prettier/prettier": [
         1,
         {
-          "semi": false,
+          "semi": true,
           "tabWidth": 2,
           "trailingComma": "es5",
           "arrowParens": "avoid",
-          "singleQuote": true,
+          "singleQuote": false,
           "endOfLine": "auto"
         }
       ],
