@@ -1,3 +1,3 @@
-const App = () => <h1>Formula 1</h1>
+const App = () => <h1>Formula 1</h1>;
 
-export default App
+export default App;
