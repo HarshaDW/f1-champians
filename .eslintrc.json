@@ -20,6 +20,7 @@
       "prettier",
       "plugin:prettier/recommended"
     ],
+    "ignorePatterns": ["temp.js", "**/src/assets/*"],
     "rules": {
       "no-unused-vars": "off",
       "prettier/prettier": [
@@ -33,7 +34,7 @@
           "endOfLine": "auto"
         }
       ],
-      "@typescript-eslint/no-unused-vars": ["error"],
+      "@typescript-eslint/no-unused-vars": ["warn"],
       "@typescript-eslint/no-var-requires": "off",
       "react/prop-types": "off",
       "react/jsx-uses-react": "off",

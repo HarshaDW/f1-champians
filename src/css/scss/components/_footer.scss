@@ -1,0 +1,27 @@
+/*------------------------------------*\
+    $FOOTER
+\*------------------------------------*/
+
+/**
+ * 1) Global footer at the bottom of each page that contains a navigation and other information.
+ */
+.c-footer {
+  background: rgb(0, 0, 0);
+  color: #fff;
+  padding: 0.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 356px) {
+  .c-footer {
+    display: none;
+  }
+}
+
+.c-footer__copyright {
+  margin-top: 2rem;
+  text-align: center;
+}
