@@ -25,7 +25,11 @@ const SessionModal = (props: Props) => {
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <button className="close-modal" onClick={handleClick}>
+        <button
+          className="close-modal"
+          data-testid="close-modal-button"
+          onClick={handleClick}
+        >
           <svg viewBox="0 0 20 20">
             <path
               fill="#000000"
@@ -34,14 +38,18 @@ const SessionModal = (props: Props) => {
           </svg>
         </button>
         {loading ? (
-          <div className="loader" />
+          <div className="loader" data-testid="modal-loader" />
         ) : (
           <div className="modal-content">
             <h3>{seasonAndWinner.season}</h3>
             <div className="grid-container">
               {details.map((item, index) => {
                 return (
-                  <div key={index} className="grid-item">
+                  <div
+                    key={index}
+                    data-test={`grid-item-${index}`}
+                    className="grid-item"
+                  >
                     <h4>{item.raceName}</h4>
                     <p>
                       Winner:
@@ -51,7 +59,12 @@ const SessionModal = (props: Props) => {
                     {seasonAndWinner.winnerId ===
                       item.Results[0].Driver.driverId && (
                       <h5>
-                        World Champion <img src={winnerIcon} alt="winner" />
+                        World Champion{" "}
+                        <img
+                          src={winnerIcon}
+                          alt="winner"
+                          data-testid="img-winner-modal"
+                        />
                       </h5>
                     )}
                   </div>

@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import { DriverStandings } from "../../../@types";
 
 interface Props {
   headers: string[];
@@ -14,7 +13,7 @@ const Table = (props: Props) => {
   return (
     <ul className="responsive-table">
       <>
-        <li className="table-header">
+        <li className="table-header" data-testid="table-header">
           {props.headers.map((header, index) => (
             <div key={index} className={`col col-${index + 1}`}>
               {header}
@@ -30,6 +29,7 @@ const Table = (props: Props) => {
               <li
                 key={index}
                 className="table-row"
+                data-testid={`table-row-${index}`}
                 onClick={(e) => {
                   e.preventDefault();
                   props.handleClick(item.season, item.winner.Driver.driverId);
