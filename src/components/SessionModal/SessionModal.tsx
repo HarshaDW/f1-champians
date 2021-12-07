@@ -1,15 +1,33 @@
 import { DriverStandings, Race } from "../../@types";
-
+import { ApiInstance } from "../../api/ApiInstance";
+import { useEffect, useState } from "react";
 interface Props {
-  handleClick: () => void;
-  seasonResult: Race;
+  handleClick: any;
+  seasonAndWinner: {
+    season: string;
+    winnerId: string;
+  };
 }
 const SessionModal = (props: Props) => {
-  const { seasonResult, handleClick } = props;
+  const { seasonAndWinner, handleClick } = props;
+  const [details, setDetails] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    const api = new ApiInstance();
+    api.getSeason(seasonAndWinner.season).then(data => {
+      setLoading(false);
+      setDetails(data.data.MRData.RaceTable.Races);
+    });
+  }, [seasonAndWinner.season]);
+
+  console.log("seasonAndWinner", seasonAndWinner);
+
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <header className="modal-header">{seasonResult.season}</header>
+        <header className="modal-header">{seasonAndWinner.season}</header>
         <button className="close-modal" onClick={handleClick}>
           <svg viewBox="0 0 20 20">
             <path
@@ -18,10 +36,41 @@ const SessionModal = (props: Props) => {
             ></path>
           </svg>
         </button>
+        {loading ? (
+          <div className="loader" />
+        ) : (
+          <div className="modal-content">
+            <h3>{seasonAndWinner.season}</h3>
+            {/* {details.map((item, index) => {
+              return (
+                <div key={index} className="container">
+                  <dl className="sticky-stack">
+                    <dt>{item.raceName}</dt>
+                    <dd>{`${item.Results[0].Driver.givenName} ${item.Results[0].Driver.familyName}`}</dd>
+                    <dd>{item.Results[0].Constructor.name}</dd>
+                  </dl>
+                </div>
+              );
+            })} */}
 
-        <div className="modal-content">
-          <h3>Some content here</h3>
-        </div>
+            <div className="grid-container">
+              {details.map((item, index) => {
+                return (
+                  <div key={index} className="grid-item">
+                    <h4>{item.raceName}</h4>
+                    <p>
+                      Driver :{" "}
+                      {`${item.Results[0].Driver.givenName} ${item.Results[0].Driver.familyName}`}
+                    </p>
+                    <p>Vehicle: {item.Results[0].Constructor.name}</p>
+                    {seasonAndWinner.winnerId ===
+                      item.Results[0].Driver.driverId && <p>World Champion</p>}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
