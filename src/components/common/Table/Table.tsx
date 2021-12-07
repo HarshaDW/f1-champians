@@ -3,34 +3,34 @@ import { DriverStandings } from "../../../@types";
 
 interface Props {
   headers: string[];
-  handleClick: any;
+  handleClick: (season: string, winnerId: string) => void;
   standings: any;
 }
 
 const Table = (props: Props) => {
   const { standings } = props;
   const { loading, results } = standings;
- 
+
   return (
     <ul className="responsive-table">
-      {loading ? (
-        <div className="loader" />
-      ) : (
-        <>
-          <li className="table-header">
-            {props.headers.map((header, index) => (
-              <div key={index} className={`col col-${index + 1}`}>
-                {header}
-              </div>
-            ))}
-          </li>
-          {results.map((item: any, index: number) => {
+      <>
+        <li className="table-header">
+          {props.headers.map((header, index) => (
+            <div key={index} className={`col col-${index + 1}`}>
+              {header}
+            </div>
+          ))}
+        </li>
+        {loading ? (
+          <div className="loader" />
+        ) : (
+          results.map((item: any, index: number) => {
             return (
               // eslint-disable-next-line jsx-a11y/click-events-have-key-events
               <li
                 key={index}
                 className="table-row"
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
                   props.handleClick(item.season, item.winner.Driver.driverId);
                 }}
@@ -56,9 +56,9 @@ const Table = (props: Props) => {
                 </div>
               </li>
             );
-          })}
-        </>
-      )}
+          })
+        )}
+      </>
     </ul>
   );
 };

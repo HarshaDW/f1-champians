@@ -1,7 +1,7 @@
 /**
  * Variables
  */
-$button-bg: #ffffff;
+$button-bg: #f60000;
 $speed: 0.6s;
 $delay: ($speed * 0.5);
 $easing: cubic-bezier(0.55, 0, 0.1, 1);
@@ -10,7 +10,7 @@ button {
   position: relative;
   color: #fff;
   border: none;
-  padding: 1.25em 2em;
+  padding: 0.2em 0.5em;
   font-size: 0.75em;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -58,9 +58,9 @@ button {
   justify-content: center;
   position: relative;
   margin: 0 auto;
-  background-color: #fff;
-  width: 600px;
-  max-width: 75rem;
+  background-color: #f4f4f4;
+  width: auto;
+  min-width: 26rem;
   min-height: 20rem;
   padding: 1rem;
   border-radius: 3px;

@@ -15,11 +15,23 @@
 .l-layout-container {
   margin: auto;
   width: 50%;
-  border: 3px solid rgb(255, 231, 12);
+  border: 1.5px solid rgba(171, 171, 171, 0.875);
   padding: 10px;
   margin-top: 40px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.909);
   opacity: 0.9;
+  border-radius: 20px;
+}
+
+.l-layout-container {
+  margin: auto;
+  width: 50%;
+  border: 1.5px solid rgba(171, 171, 171, 0.875);
+  padding: 10px;
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.909);
+  opacity: 0.9;
+  border-radius: 20px;
 }
 
 @media all and (max-width: 360px) {
@@ -28,7 +40,7 @@
     width: 100%;
     border: none;
     padding: 10px;
-    margin-top: 40px;
+    margin-top: 0px;
     background-color: transparent;
     opacity: 1;
   }

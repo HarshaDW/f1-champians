@@ -7,8 +7,8 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 const DriverStandings = () => {
   const [open, setOpen] = useState(false);
   const [selectedSeason, setSelectedSeason] = useState({
-    season: '',
-    winnerId: ''
+    season: "",
+    winnerId: "",
   });
   const standings = useAppSelector(selectResults);
   const dispatch = useAppDispatch();
@@ -22,7 +22,7 @@ const DriverStandings = () => {
     "Points",
   ];
 
-  const handleOpenModal = (season, winnerId) => {
+  const handleOpenModal = (season?: string, winnerId?: string): void => {
     setSelectedSeason({
       ...selectedSeason,
       season: season,
@@ -31,7 +31,9 @@ const DriverStandings = () => {
     setOpen(!open);
   };
 
-  const handleDateRangeChange = e => {
+  const handleDateRangeChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ): void => {
     dispatch(resultsByYear(JSON.parse(e.target.value)));
   };
   const options = [
@@ -51,19 +53,24 @@ const DriverStandings = () => {
 
   return (
     <div className="t-container">
-      <h2>Driver Standings</h2>
-      <SelectBox
-        onChange={handleDateRangeChange}
-        options={options}
-        selectLabel={"Select Years"}
-      />
+      <div className="t-container-header">
+        <SelectBox
+          onChange={handleDateRangeChange}
+          options={options}
+          selectLabel={"Select Years"}
+        />
+        <h2>Driver Standings</h2>
+      </div>
       <Table
         headers={headers}
         standings={standings}
         handleClick={handleOpenModal}
       />
       {open && (
-        <SessionModal seasonAndWinner={selectedSeason} handleClick={handleOpenModal} />
+        <SessionModal
+          seasonAndWinner={selectedSeason}
+          handleClick={handleOpenModal}
+        />
       )}
     </div>
   );

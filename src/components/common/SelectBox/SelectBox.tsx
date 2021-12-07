@@ -1,9 +1,11 @@
+import React from "react";
+
 interface Option {
   option: string;
   value: string;
 }
 interface Props {
-  onChange?: any;
+  onChange: any;
   options: Option[];
   selectLabel: string;
 }

@@ -12,6 +12,11 @@
 }
 
 .standard-select-container {
+  float: right;
+  width: 100%;
+  display: inline-flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
 }
 
 :root {
@@ -96,9 +101,22 @@ select[multiple] {
 label {
   font-size: 1.125rem;
   font-weight: 500;
+  margin-right: 10px;
 }
 
 .select + label {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+@media all and (max-width: 767px) {
+  .standard-select-container {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
 }

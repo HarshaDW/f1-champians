@@ -20,7 +20,7 @@
       "prettier",
       "plugin:prettier/recommended"
     ],
-    "ignorePatterns": ["temp.js", "**/src/assets/*"],
+    "ignorePatterns": ["src/assets"],
     "rules": {
       "no-unused-vars": "off",
       "prettier/prettier": [

@@ -1,8 +1,8 @@
-import { DriverStandings, Race } from "../../@types";
 import { ApiInstance } from "../../api/ApiInstance";
 import { useEffect, useState } from "react";
+import winnerIcon from "../../assets/images/winner.png";
 interface Props {
-  handleClick: any;
+  handleClick: () => void;
   seasonAndWinner: {
     season: string;
     winnerId: string;
@@ -16,18 +16,15 @@ const SessionModal = (props: Props) => {
   useEffect(() => {
     setLoading(true);
     const api = new ApiInstance();
-    api.getSeason(seasonAndWinner.season).then(data => {
+    api.getSeason(seasonAndWinner.season).then((data) => {
       setLoading(false);
       setDetails(data.data.MRData.RaceTable.Races);
     });
   }, [seasonAndWinner.season]);
 
-  console.log("seasonAndWinner", seasonAndWinner);
-
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <header className="modal-header">{seasonAndWinner.season}</header>
         <button className="close-modal" onClick={handleClick}>
           <svg viewBox="0 0 20 20">
             <path
@@ -41,30 +38,22 @@ const SessionModal = (props: Props) => {
         ) : (
           <div className="modal-content">
             <h3>{seasonAndWinner.season}</h3>
-            {/* {details.map((item, index) => {
-              return (
-                <div key={index} className="container">
-                  <dl className="sticky-stack">
-                    <dt>{item.raceName}</dt>
-                    <dd>{`${item.Results[0].Driver.givenName} ${item.Results[0].Driver.familyName}`}</dd>
-                    <dd>{item.Results[0].Constructor.name}</dd>
-                  </dl>
-                </div>
-              );
-            })} */}
-
             <div className="grid-container">
               {details.map((item, index) => {
                 return (
                   <div key={index} className="grid-item">
                     <h4>{item.raceName}</h4>
                     <p>
-                      Driver :{" "}
-                      {`${item.Results[0].Driver.givenName} ${item.Results[0].Driver.familyName}`}
+                      Winner:
+                      {` ${item.Results[0].Driver.givenName} ${item.Results[0].Driver.familyName}`}
                     </p>
                     <p>Vehicle: {item.Results[0].Constructor.name}</p>
                     {seasonAndWinner.winnerId ===
-                      item.Results[0].Driver.driverId && <p>World Champion</p>}
+                      item.Results[0].Driver.driverId && (
+                      <h5>
+                        World Champion <img src={winnerIcon} alt="winner" />
+                      </h5>
+                    )}
                   </div>
                 );
               })}
