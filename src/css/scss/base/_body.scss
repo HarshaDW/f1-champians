@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #BODY
+\*------------------------------------*/
+
+/**
+ * Body base styles
+ */
+//  $font-path: "../assets/fonts";
+$background-path: "../assets/images";
+
+body {
+  // font-family: url("#{$font-path}/Formula1-Bold_web_0.ttf") format("woff2");
+  background-image: url("#{$background-path}/bg.png");
+  position: relative;
+}

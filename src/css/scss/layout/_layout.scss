@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+/**
+ * Layout Container
+ * 1) Caps the width of the content to the maximum width
+ *    and centers the container
+ */
+.l-container {
+  margin: 0 auto;
+  height: 100%;
+}
+
+.l-layout-container {
+  margin: auto;
+  width: 50%;
+  border: 1.5px solid rgba(171, 171, 171, 0.875);
+  padding: 10px;
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.909);
+  opacity: 0.9;
+  border-radius: 20px;
+}
+
+.l-layout-container {
+  margin: auto;
+  width: 50%;
+  border: 1.5px solid rgba(171, 171, 171, 0.875);
+  padding: 10px;
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.909);
+  opacity: 0.9;
+  border-radius: 20px;
+}
+
+@media all and (max-width: 360px) {
+  .l-layout-container {
+    margin: auto;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    margin-top: 0px;
+    background-color: transparent;
+    opacity: 1;
+  }
+}

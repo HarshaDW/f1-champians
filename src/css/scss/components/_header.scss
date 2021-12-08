@@ -1,0 +1,25 @@
+/*------------------------------------*\
+    #HEADER
+\*------------------------------------*/
+
+/**
+ * Global block at the top of each page containing the navigation, logo, and other potential utility nav
+ */
+.c-header {
+  background: rgb(0, 0, 0);
+  padding: 1rem 2rem;
+  display: flex;
+}
+
+.c-header h2 {
+  color: white;
+  line-height: 2.2;
+  margin: 6px;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 356px) {
+  .c-header h2 {
+    display: none;
+  }
+}
