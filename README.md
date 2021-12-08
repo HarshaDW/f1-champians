@@ -30,11 +30,11 @@ To test the available unit test
 #### Test Header Component- src/components/common/Heeder/__tests__/Header.test.js
 ***
 #### Test Select Box Component - src/components/common/SelectBox/__tests__/SelectBox.test.js
-
+***
 ### `npm run cy:run | npm run cy:open (Test with Cypress Dashboard)`
 
-To test the available unit test
-
+To test the available feature test
+<img src="./wireframes/cypress-result.png?raw=true" width="300" height="200">
 ### `npm run lint`
 
 Show all possible lint errors
