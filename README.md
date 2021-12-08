@@ -7,3 +7,5 @@ In this project we will use http://ergast.com/mrd/ to create a single page appli
 ### Wireframes
 
 ![Alt text](./wireframes/wireframe.main.jpg?raw=true "Wireframe")
+
+<img src="./wireframes/wireframe.main.jpg?raw=true" width="50" height="50">
