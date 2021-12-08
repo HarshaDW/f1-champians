@@ -1,2 +1,6 @@
 # dependencies
 /node_modules
+
+# Ignore Cypress test snapshots
+/cypress/videos
+/cypress/screenshots
