@@ -16,7 +16,7 @@ const SessionModal = (props: Props) => {
   useEffect(() => {
     setLoading(true);
     const api = new ApiInstance();
-    api.getSeason(seasonAndWinner.season).then((data) => {
+    api.getSeason(seasonAndWinner.season).then(data => {
       setLoading(false);
       setDetails(data.data.MRData.RaceTable.Races);
     });

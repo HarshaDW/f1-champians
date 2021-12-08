@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-
+import { ResultState } from "../../../redux/results/resultSlice";
 interface Props {
   headers: string[];
   handleClick: (season: string, winnerId: string) => void;
-  standings: any;
+  standings: ResultState;
 }
 
 const Table = (props: Props) => {
@@ -34,7 +34,6 @@ const Table = (props: Props) => {
                   e.preventDefault();
                   props.handleClick(item.season, item.winner.Driver.driverId);
                 }}
-                // onKeyDown={props.handleClick(item.season)}
               >
                 <div
                   className="col col-1"
