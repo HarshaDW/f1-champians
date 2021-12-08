@@ -42,7 +42,7 @@ Fix all prettier problems in your code
 
 Update all changed styles and create a styles.css
 
-### Decisions | Tech Stack
+## Decisions | Tech Stack
 
 ## Fetch only 5 years at a given time
 
