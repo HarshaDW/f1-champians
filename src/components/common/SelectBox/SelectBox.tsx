@@ -14,12 +14,25 @@ const SelectBox = (props: Props) => {
   const { onChange, options, selectLabel } = props;
   return (
     <div className="standard-select-container">
-      <label htmlFor="standard-select">{selectLabel}</label>
+      <label
+        htmlFor="standard-select"
+        data-testId={`select-label-${selectLabel}`}
+      >
+        {selectLabel}
+      </label>
       <div className="select">
-        <select id="standard-select" onChange={onChange}>
+        <select
+          id="standard-select"
+          data-testId="select-box"
+          onChange={onChange}
+        >
           {options.map((item, index) => {
             return (
-              <option key={index} value={item.value}>
+              <option
+                key={index}
+                data-testId={`option-${item.option}`}
+                value={item.value}
+              >
                 {item.option}
               </option>
             );

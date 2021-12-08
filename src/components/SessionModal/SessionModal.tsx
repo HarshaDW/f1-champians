@@ -24,10 +24,10 @@ const SessionModal = (props: Props) => {
 
   return (
     <div className="modal-overlay">
-      <div className="modal">
+      <div className="modal" data-testId="session-modal">
         <button
           className="close-modal"
-          data-testid="close-modal-button"
+          data-testId="close-modal-button"
           onClick={handleClick}
         >
           <svg viewBox="0 0 20 20">

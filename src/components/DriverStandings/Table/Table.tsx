@@ -30,13 +30,17 @@ const Table = (props: Props) => {
                 key={index}
                 className="table-row"
                 data-testid={`table-row-${index}`}
-                onClick={(e) => {
+                onClick={e => {
                   e.preventDefault();
                   props.handleClick(item.season, item.winner.Driver.driverId);
                 }}
                 // onKeyDown={props.handleClick(item.season)}
               >
-                <div className="col col-1" data-label="Season">
+                <div
+                  className="col col-1"
+                  data-label="Season"
+                  data-testId={`Season-${item.season}`}
+                >
                   {item.season}
                 </div>
                 <div className="col col-2" data-label="Winner">
