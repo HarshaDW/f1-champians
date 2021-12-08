@@ -1,6 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
-
-## F1 Champions
+# F1 Champions
 
 In this project we will use http://ergast.com/mrd/ to create a single page application that presents a list that shows the F1 world champions starting from 2005 until now.
 
@@ -42,7 +40,7 @@ Fix all prettier problems in your code
 
 Update all changed styles and create a styles.css
 
-## Decisions | Tech Stack
+# Decisions | Tech Stack
 
 ## Fetch only 5 years at a given time
 
