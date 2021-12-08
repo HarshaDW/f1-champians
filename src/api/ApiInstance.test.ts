@@ -1,6 +1,5 @@
 import axios, { AxiosResponse } from "axios";
 import { ApiInstance, DriverStandingAPIResponse } from "./ApiInstance";
-import DriverStandings from "../@types/DriverStandings";
 
 jest.mock("axios");
 

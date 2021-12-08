@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ApiInstance, DriverStandingAPIResponse } from "../../api/ApiInstance";
+import { ApiInstance } from "../../api/ApiInstance";
 import { RootState } from "../store";
-import { Race, Result } from "../../@types";
+import { Result } from "../../@types";
 
 export interface ResultState {
   results: Result[];
@@ -38,8 +38,8 @@ export const resultSlice = createSlice({
   name: "results",
   initialState,
   reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(resultsByYear.pending, (state, action) => {
+  extraReducers: builder => {
+    builder.addCase(resultsByYear.pending, state => {
       state.loading = true;
     });
     builder.addCase(
