@@ -7,5 +7,5 @@ export default interface ResultStateResult {
   points: string;
   wins: string;
   Driver: Driver;
-  Constructor: Constructor;
+  Constructor: Constructor[];
 }
